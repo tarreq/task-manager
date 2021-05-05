@@ -1,0 +1,45 @@
+type User @model {
+	id: ID!
+	fName: String!
+	lName: String!
+	email: String!
+  teams: [TeamUsers] @connection(keyName: "UserTeams", fields: ["id"])
+  tasks: [UserTasks] @connection(keyName: "UserTasks", fields: ["id"])
+
+}
+
+type Task @model {
+	id: ID!,
+	title: String!
+	desc: String!
+	status: Boolean
+  users: [UserTasks] @connection(keyName: "TaskUsers", fields: ["id"])
+}
+
+type Team @model {
+	id: ID!
+	name: String!
+  users: [TeamUsers] @connection(keyName: "TeamUsers", fields: ["id"])
+}
+
+type TeamUsers @model 
+@key(name: "UserTeams", fields: ["userId"])
+@key(name: "TeamUsers", fields: ["teamId"])
+{
+	id: ID!
+	teamId: ID!
+	userId: ID!
+	user: User @connection(name: "UserTeams", fields: ["userId"])
+  team: Team @connection(name: "TeamUsers", fields: ["teamId"])
+}
+
+type UserTasks @model 
+@key(name: "UserTasks", fields: ["userId"])
+@key(name: "TaskUsers", fields: ["taskId"])
+{
+	id: ID!
+	taskId: ID!
+	userId: ID!
+	user: User @connection(name: "UserTasks", fields: ["userId"])
+  task: Task @connection(name: "TaskUsers", fields: ["taskId"])
+}

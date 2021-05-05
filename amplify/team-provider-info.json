@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-task-manager-dev-162348-authRole",
+            "UnauthRoleArn": "arn:aws:iam::328008447770:role/amplify-task-manager-dev-162348-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::328008447770:role/amplify-task-manager-dev-162348-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-task-manager-dev-162348-deployment",
+            "UnauthRoleName": "amplify-task-manager-dev-162348-unauthRole",
+            "StackName": "amplify-task-manager-dev-162348",
+            "StackId": "arn:aws:cloudformation:us-east-2:328008447770:stack/amplify-task-manager-dev-162348/b0922eb0-a9bf-11eb-9647-020951ba3322",
+            "AmplifyAppId": "d3j9shk7j0dimj"
+        },
+        "categories": {
+            "auth": {
+                "taskmanager98187c69": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3j9shk7j0dimj",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
